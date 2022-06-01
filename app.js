@@ -35,7 +35,7 @@ function guardar(){
 
 //Leer documentos
 var tabla = document.getElementById('tabla');
-db.collection("Plato").onSnapshot((querySnapshot) => {
+db.collection("Platos").onSnapshot((querySnapshot) => {
     tabla.innerHTML = '';
     querySnapshot.forEach((doc) => {
         console.log(`${doc.id} => ${doc.data().first}`);
@@ -45,6 +45,7 @@ db.collection("Plato").onSnapshot((querySnapshot) => {
         <td></td>
         <td></td>
         <td></td>
+        <td>${doc.data().mesa}</td>
         <td>${doc.data().cantidad}</td>
         <td>${doc.data().descripcion}</td>
         <td></td>
